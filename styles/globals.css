@@ -1,9 +1,13 @@
-html,
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
 body {
+  font-family: "Roboto", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 a {
@@ -11,6 +15,264 @@ a {
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
+.container {
+  background-color: #e5e5e5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.todo-list {
+  padding: 60px 100px;
+  background-color: #f5f5f5;
+  border-radius: 20px;
+  min-height: 620px;
+  min-width: 720px;
+}
+
+.summary-box {
+  background-color: #e07c7c;
+  margin-top: 60px;
+  border-radius: 20px;
+  height: 120px;
+  padding: 20px;
+  display: grid;
+  grid-gap: 12px;
+}
+
+.summary-box h3 {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.summary-box h5 {
+  color: #ebb9b8;
+}
+
+.percent-bar {
+  width: 100%;
+  height: 10px;
+  background-color: #3b3b3b;
+  border-radius: 999px;
+}
+
+.progress {
+  height: 100%;
+  background-color: #ffffff;
+  border-radius: 999px;
+}
+
+.task-label {
+  margin: 32px 0 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-label h3 {
+  font-weight: bold;
+}
+
+.custom-dropdown {
+  width: 110px;
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-header {
+  padding: 10px;
+  border-radius: 10px;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dropdown-options {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+  z-index: 999;
+  padding: 10px 0;
+  box-shadow: 0px 0px 8px 0px #0000001a;
+}
+
+.option {
+  padding: 5px 20px;
+  cursor: pointer;
+}
+
+.option-selected {
+  background-color: #585292;
+  background-clip: padding-box;
+  color: #ffffff;
+  border-radius: 10px;
+  margin: 0 10px;
+  padding: 5px 10px;
+}
+
+.form-container,
+.task-container {
+  width: 100%;
+  border-radius: 999px;
+  padding: 5px 5px 5px 20px;
+  background-color: #fff;
+  height: 46px;
+  display: flex;
+  align-items: center;
+}
+
+.input-field {
+  width: 100%;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: blue;
+}
+
+.btn-save {
+  border-radius: 999px;
+  background-color: #585292;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-save:hover {
+  background-color: #585292;
+}
+
+.tasks {
+  display: grid;
+  gap: 10px;
+  list-style: none;
+  margin-bottom: 10px;
+}
+
+.task-container {
+  justify-content: space-between;
+}
+
+.todo {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.todo span {
+  overflow: scroll;
+  max-width: 480px;
+}
+
+.title-completed {
+  color: #a9a9a9;
+  text-decoration: line-through;
+}
+
+.checkbox-completed {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  border: 2px solid #585292;
+  outline: none;
+  position: relative;
+  cursor: pointer;
+}
+
+.checkbox-completed:checked {
+  border-color: #585292;
+  background-color: #585292;
+}
+
+.checkbox-completed:checked::before {
+  content: "";
+  position: absolute;
+  top: 25%;
+  left: 40%;
+  width: 3px;
+  height: 6px;
+  border-right: 2px solid white;
+  border-bottom: 2px solid white;
+  border-radius: 2px;
+  transform: rotate(45deg);
+}
+
+.checkbox-completed:focus {
+  outline: none;
+}
+
+.svg-icon-dot {
+  fill: #9796a8;
+  font-size: 20px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-toggle {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 0.5em;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  z-index: 1;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 8px 0px #0000001a;
+  min-width: 100px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.dropdown-option {
+  color: #2e2e2e;
+  padding: 12px 16px;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dropdown-option:hover {
+  background-color: #ddd;
+}
+
+.delete-option {
+  color: #e07c7c;
+}
+
+@media (max-width: 700px) {
+  .container {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: start;
+    background-color: #ffffff;
+  }
+
+  .todo-list {
+    padding: 30px 50px;
+  }
 }
